@@ -6,23 +6,23 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
-  SignOutButton,
   SignUpButton,
 } from "@clerk/nextjs";
+import UserNav from "./UserNav";
 
 export default function Navbar() {
   return (
     <nav className="max-w-7xl mx-auto p-4 border-b">
       <div className="flex items-center justify-between">
         <Link href={"/"}>
-          <h1 className="font-bold text-3xl">alexSaas</h1>
+          <h1 className="font-bold text-3xl">
+            alex <span className="text-primary">Saas</span>
+          </h1>
         </Link>
         <div className="flex items-center gap-x-5">
           <ModeToggle />
           <SignedIn>
-            <SignOutButton>
-              <Button>Logout</Button>
-            </SignOutButton>
+            <UserNav />
           </SignedIn>
           <SignedOut>
             <div className="flex items-center gap-x-5">
